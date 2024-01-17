@@ -24,6 +24,10 @@ const axiosInstance = axios.create({
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!🚀');
+});
+
 app.get('/user/:username', async (req, res) => {
     try {
         const username = req.params.username;
@@ -46,7 +50,6 @@ app.get('/user/:username', async (req, res) => {
         res.status(500).send('An error occurred while fetching data from GitHub.');
     }
 });
-
 
 app.get('/user/:username/profile', async (req, res) => {
     try {
