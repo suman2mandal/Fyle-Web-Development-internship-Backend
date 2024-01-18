@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
+    console.log(token,"token is ...");
     res.send('Hello World!🚀');
 });
 
