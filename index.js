@@ -6,9 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-app.use(cors());
 const port = 5000;
-
 
 const temp_token = process.env.key;
 const token = temp_token.replace(/"/g, '');
@@ -34,6 +32,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Add this line to handle preflight requests
+app.options('*', cors(corsOptions)); // include before other routes
 
 app.get('/', (req, res) => {
     console.log(token,"token is ...");
@@ -86,7 +86,6 @@ app.get('/user/:username/profile', async (req, res) => {
         res.status(500).send('An error occurred while fetching data from GitHub.');
     }
 });
-
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
