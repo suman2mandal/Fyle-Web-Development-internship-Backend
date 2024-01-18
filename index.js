@@ -9,7 +9,9 @@ const app = express();
 app.use(cors());
 const port = 5000;
 
-const token = "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";
+
+const token = process.env.key;
+console.log(token,"token is ...");
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${token}`);
 const options = {
