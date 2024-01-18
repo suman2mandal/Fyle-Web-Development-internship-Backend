@@ -27,8 +27,7 @@ const axiosInstance = axios.create({
 });
 
 const corsOptions = {
-    origin: ['https://fyle-web-development-internship-frontend.vercel.app/', 'http://localhost:3000'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: 'http://localhost:3000',
     credentials: true,
     optionsSuccessStatus: 204,
 };
