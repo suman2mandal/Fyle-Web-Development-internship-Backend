@@ -11,7 +11,7 @@ const port = 5000;
 
 
 const temp_token = process.env.key;
-const token = token.replace(/"/g, '');
+const token = temp_token.replace(/"/g, '');
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${token}`);
 const options = {
