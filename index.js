@@ -25,15 +25,12 @@ const axiosInstance = axios.create({
 });
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
+    origin: '*',
+    credentials: false,
     optionsSuccessStatus: 204,
 };
 
 app.use(cors(corsOptions));
-
-// Add this line to handle preflight requests
-app.options('*', cors(corsOptions)); // include before other routes
 
 app.get('/', (req, res) => {
     console.log(token,"token is ...");
