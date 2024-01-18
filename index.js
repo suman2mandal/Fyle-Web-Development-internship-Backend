@@ -11,7 +11,6 @@ const port = 5000;
 
 
 const token = process.env.key;
-console.log(token,"token is ...");
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${token}`);
 const options = {
@@ -39,6 +38,7 @@ app.get('/', (req, res) => {
 
 app.get('/user/:username', async (req, res) => {
     try {
+        console.log(token,"token is ...");
         const username = req.params.username;
         const itemsPerPage = 10;
         const page = req.query.page || 1;
@@ -62,6 +62,7 @@ app.get('/user/:username', async (req, res) => {
 
 app.get('/user/:username/profile', async (req, res) => {
     try {
+        console.log(token,"token is ...");
         const username = req.params.username;
         const url = `/users/${username}`;
 
