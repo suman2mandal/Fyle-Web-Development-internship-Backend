@@ -32,7 +32,7 @@ const corsOptions = {
 
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://fyle-web-development-internship-backend.vercel.app',
     credentials: true,
     optionsSuccessStatus: 204,
 }));
