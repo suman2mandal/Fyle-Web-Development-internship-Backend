@@ -10,7 +10,8 @@ app.use(cors());
 const port = 5000;
 
 
-const token = process.env.key;
+const temp_token = process.env.key;
+const token = token.replace(/"/g, '');
 const headers = new Headers();
 headers.append("Authorization", `Bearer ${token}`);
 const options = {
