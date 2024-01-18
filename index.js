@@ -32,7 +32,7 @@ const corsOptions = {
 
 
 app.use(cors({
-    origin: 'https://fyle-web-development-internship-backend.vercel.app',
+    origin: 'https://fyle-web-development-internship-frontend.vercel.app',
     credentials: true,
     optionsSuccessStatus: 204,
 }));
