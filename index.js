@@ -25,12 +25,18 @@ const axiosInstance = axios.create({
 });
 
 const corsOptions = {
-    origin: '*',
+    origin: 'http://localhost:3000', // Replace with your actual frontend URL
     credentials: false,
     optionsSuccessStatus: 204,
 };
 
-app.use(cors(corsOptions));
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
+app.options('*', cors(corsOptions));
+
 
 app.get('/', (req, res) => {
     console.log(token,"token is ...");
